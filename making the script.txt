@@ -1,0 +1,14 @@
+import RPi.GPIO as GPIO
+import datetime
+import time
+
+pin = your_output_pin_here
+GPIO.setup(pin, GPIO.OUT)
+
+while True:
+    time = datetime.datetime.now().strftime("%H:%M")
+    if time == "12:00":
+        GPIO.output(pin, True)
+        time.sleep(number_of_seconds_for_led_to_be_on_here)
+        GPIO.output(pin, False)
+    time.sleep(0.030)

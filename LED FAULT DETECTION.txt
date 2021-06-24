@@ -1,0 +1,55 @@
+const int ledPin10 = 11;
+const int ledPin20 = 10;
+
+const int ldrPin1 = A0;
+const int ldrPin2 = A1;
+
+void setup() {
+
+  Serial.begin(9600);
+
+  pinMode(ledPin10, OUTPUT);
+
+  pinMode(ledPin20, OUTPUT);
+
+  pinMode(ldrPin1, INPUT);
+
+  pinMode(ldrPin2, INPUT);
+
+}
+
+void loop() {
+
+  int ldrStatus1 = analogRead(ldrPin1);
+  int ldrStatus2 = analogRead(ldrPin2);
+  
+  if (ldrStatus1 <= 300) {
+
+    digitalWrite(ledPin10, HIGH);
+
+    Serial.println("LDR is DARK, LED is ON");
+
+  }
+
+  else {
+     digitalWrite(ledPin10, LOW);
+
+    Serial.println("LDR is DARK, LED is ON");
+
+  }
+
+  if
+      (ldrStatus2 >= 300){
+    digitalWrite(ledPin20, HIGH);
+
+    Serial.println("DAY TIME, LED OFF");
+
+  }
+else {
+     digitalWrite(ledPin20, LOW);
+
+    Serial.println("LDR is DARK, LED is ON");
+
+}
+
+}
